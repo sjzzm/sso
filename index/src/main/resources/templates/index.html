@@ -7,7 +7,7 @@
 <body>
 <h1>首页</h1>
 <a th:if="${session.username == null}" href="http://localhost:8081/login?target=http://localhost:8080/">立即登录</a>
-<a th:if="${session.username != null}" href=""><div th:text="${session.username}"></div>退出登录</a>
+<a th:if="${session.username != null}" href="/out"><div th:text="${session.username}"></div>退出登录</a>
 <a th:href="@{'http://localhost:8082/oa?token='+${session.token == null?'':session.token}}">访问oa子系统</a>
 <a th:href="@{'http://localhost:8083/ekp?token='+${session.token == null?'':session.token}}">访问ekp子系统</a>
 </body>
